@@ -28,6 +28,8 @@
             //icon.value = City.reverse();
 
             LoadCity();
+            var text = document.getElementById("txtPrint");
+            text.innerHTML = (text.innerHTML=="Ascending Order")?"Descending Order":"Ascending Order";
         }
         function bodyload()
         {
@@ -57,15 +59,19 @@
             color: white;
             padding: 10px;
         }
+        p {
+            text-shadow: 0 0 10px white, 0 0 15px aliceblue;
+        }
     </style>
 </head>
 <body onload="bodyload()" class="control-fluid d-flex justify-content-center align-items-center bg-dark" style="height: 600px;">
-    <div >
+    <div>
         <h3>Cities Arranging</h3>
     <ol class="form-control">
         
     </ol>
-    <button class="btn btn-primary bi bi-sort-alpha-down" id="Citybtn" onclick="ChangeArrange()"> Arrange</button>
+    <button class="btn btn-primary bi bi-sort-alpha-down" id="Citybtn" onclick="ChangeArrange()"> Arrange</button><p id="txtPrint"> Sorting</p>
+    
     </div>
 </body>
 </html>
