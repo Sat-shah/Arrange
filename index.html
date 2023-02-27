@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Name</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script>
+        var City = ["Delhi", "Mumbai","Kolkata","Ranchi","Chennai","Hyderabad","Amritsar","Bengaluru","Telangana","Utrakhand", "Jharkhand"];
+        function LoadCity()
+        {
+            for(var item of City)
+            {
+                var li = document.createElement("li");
+                li.innerHTML = item;
+                document.querySelector("ol").appendChild(li);
+            }
+        }
+        function ChangeArrange()
+        {
+            var dis = document.querySelector("ol").innerHTML = "";
+            var icon = document.getElementById("Citybtn");
+            icon.className = (icon.className=="bi bi-sort-alpha-up btn btn-info")?"bi bi-sort-alpha-down btn btn-primary":"bi bi-sort-alpha-up btn btn-info";
+            icon.innerHTML = (icon.innerHTML=="Reverse")?"Sort":"Reverse";
+            icon.value = (icon.value==City.sort())?(City.sort(),City.reverse()):(City.sort());
+            //icon.value = City.reverse();
+
+            LoadCity();
+        }
+        function bodyload()
+        {
+            LoadCity();
+
+        }
+        
+       
+    </script>
+
+    <style>
+        
+        ol {
+            list-style-type: none;
+        }
+        div{
+            font-size: 25px;
+            padding: 20px;
+            width: 500px;
+            background: radial-gradient(tomato, black);
+            border: 5px solid blue;
+            border-radius: 30px;
+            box-shadow: 0 0 10px blue, 0 0 20px lightblue, 0 0 30px greenyellow;
+        }
+        h3 {
+            background-color: gray;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body onload="bodyload()" class="control-fluid d-flex justify-content-center align-items-center bg-dark" style="height: 600px;">
+    <div >
+        <h3>Cities Arranging</h3>
+    <ol class="form-control">
+        
+    </ol>
+    <button class="btn btn-primary bi bi-sort-alpha-down" id="Citybtn" onclick="ChangeArrange()"> Arrange</button>
+    </div>
+</body>
+</html>
