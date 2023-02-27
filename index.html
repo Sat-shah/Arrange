@@ -22,7 +22,7 @@
         {
             var dis = document.querySelector("ol").innerHTML = "";
             var icon = document.getElementById("Citybtn");
-            icon.className = (icon.className=="bi bi-sort-alpha-up btn btn-info")?"bi bi-sort-alpha-down btn btn-primary":"bi bi-sort-alpha-up btn btn-info";
+            icon.className = (icon.className=="bi bi-sort-alpha-up w-25 btn btn-info")?"bi bi-sort-alpha-down w-25 btn btn-primary":"bi bi-sort-alpha-up w-25 btn btn-info";
             icon.innerHTML = (icon.innerHTML=="Reverse")?"Sort":"Reverse";
             icon.value = (icon.value==City.sort())?(City.sort(),City.reverse()):(City.sort());
             //icon.value = City.reverse();
@@ -58,9 +58,10 @@
             background-color: gray;
             color: white;
             padding: 10px;
+            border-radius: 10px 10px 0 0;
         }
         p {
-            text-shadow: 0 0 10px white, 0 0 15px aliceblue;
+            text-shadow: 0 0 10px white, 0 0 15px aliceblue, 0 0 20px yellow;
         }
     </style>
 </head>
@@ -70,7 +71,7 @@
     <ol class="form-control">
         
     </ol>
-    <button class="btn btn-primary bi bi-sort-alpha-down" id="Citybtn" onclick="ChangeArrange()"> Arrange</button><p id="txtPrint"> Sorting</p>
+    <button class="btn btn-primary " id="Citybtn" onclick="ChangeArrange()"><span class="bi bi-sort-alpha-down "></span> Arrange</button><p id="txtPrint"> Sorting</p>
     
     </div>
 </body>
